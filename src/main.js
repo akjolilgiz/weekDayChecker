@@ -1,4 +1,4 @@
-import { Weekday } from './weekdaycalculator.js';
+import { Weekday, leapYear } from './weekdaycalculator.js';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,7 +12,7 @@ $(document).ready(function() {
   let userMonth = userInputDate.getMonth();
   let userYear = userInputDate.getFullYear();
   let newDate = new Weekday(userMonth, userDay, userYear);
-  let thisDay = newDate.findDay();
+  let thisDay = newDate.findDay(userDay, userMonth);
   $("#result").text(thisDay);
 
 });

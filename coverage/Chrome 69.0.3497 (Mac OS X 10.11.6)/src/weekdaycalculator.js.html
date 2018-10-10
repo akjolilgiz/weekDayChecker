@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/weekdaycalculator.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> weekdaycalculator.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>8/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.5% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>1/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/1</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span></td><td class="text"><pre class="prettyprint lang-js">!function(e){var I={};function n(g){<span class="missing-if-branch" title="if path not taken" >I</span>if(I[g])<span class="cstat-no" title="statement not covered" >return I[g].exports;v</span>ar l=I[g]={i:g,l:!1,exports:{}};return e[g].call(l.exports,l,l.exports,n),l.l=!0,l.exports}n.m=e,n.c=I,n.d=<span class="fstat-no" title="function not covered" >function(e,I,g){<span class="cstat-no" title="statement not covered" ></span>n.o(e,I)||Object.defineProperty(e,I,{configurable:!1,enumerable:!0,get:g})}</span>,n.r=<span class="fstat-no" title="function not covered" >function(e){<span class="cstat-no" title="statement not covered" ></span>Object.defineProperty(e,"__esModule",{value:!0})}</span>,n.n=<span class="fstat-no" title="function not covered" >function(e){<span class="cstat-no" title="statement not covered" ></span>var I=e&amp;&amp;e.__esModule?<span class="fstat-no" title="function not covered" >function(){<span class="cstat-no" title="statement not covered" ></span>return e.default}</span>:<span class="fstat-no" title="function not covered" >function(){<span class="cstat-no" title="statement not covered" ></span>return e}</span>;<span class="cstat-no" title="statement not covered" >r</span>eturn n.d(I,"a",I),I}</span>,n.o=<span class="fstat-no" title="function not covered" >function(e,I){<span class="cstat-no" title="statement not covered" ></span>return Object.prototype.hasOwnProperty.call(e,I)}</span>,n.p="/var/folders/zz/zyxvpxvq6csfxvn_n00000s4000069/T/_karma_webpack_/",n(n.s=11)}({11:function(module,exports,__webpack_require__){"use strict";eval('\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\nexports.Weekday = Weekday;\nexports.leapYear = leapYear;\nfunction Weekday(month, day, year) {\n  this.month = month;\n  this.day = day;\n  this.year = year;\n}\nfunction leapYear(year) {\n  //year is a number\n  if (year % 4 == 0) {\n    if (year % 100 == 0) {\n      if (year % 400 == 0) {\n        return true;\n      } else {\n        return false;\n      }\n    } else {\n      return true;\n    }\n  } else {\n    return false;\n  }\n};\n\nWeekday.prototype.findDay = function (newDay, newMonth) {\n  var weekDay = newDay;\n  var weekday = "";\n\n  if (newMonth === 0 || newMonth === 9) {\n    weekDay = newDay;\n  } else if (newMonth === 1 || newMonth === 2 || newMonth === 10) {\n    weekDay = newDay + 3;\n  } else if (newMonth === 3 || newMonth === 6) {\n    weekDay = newDay - 1;\n  } else if (newMonth === 8 || newMonth === 11) {\n    weekDay = newDay + 5;\n  } else if (newMonth === 5) {\n    weekDay = newDay + 4;\n  } else if (newMonth === 4) {\n    weekDay = newDay + 1;\n  } else if (newMonth === 7) {\n    weekDay = newDay + 2;\n  }\n\n  if (weekDay % 7 === 1) {\n    weekday = "Monday";\n  } else if (weekDay % 7 === 2) {\n    weekday = "Tuesday";\n  } else if (weekDay % 7 === 3) {\n    weekday = "Wednesday";\n  } else if (weekDay % 7 === 4) {\n    weekday = "Thursday";\n  } else if (weekDay % 7 === 5) {\n    weekday = "Friday";\n  } else if (weekDay % 7 === 6) {\n    weekday = "Saturday";\n  } else if (weekDay % 7 === 0) {\n    weekday = "Sunday";\n  }\n  return weekday;\n};\n\n//\n// &lt;!DOCTYPE html&gt;\n// &lt;html&gt;\n// &lt;body&gt;\n//\n// &lt;h2&gt;JavaScript new Date()&lt;/h2&gt;\n//\n// &lt;p id="demo"&gt;&lt;/p&gt;\n// &lt;p id="day"&gt;&lt;/p&gt;\n// &lt;p id="year"&gt;&lt;/p&gt;\n// &lt;p id="extraDay"&gt;&lt;/p&gt;\n// &lt;p id="newDay"&gt;&lt;/p&gt;\n//\n// &lt;p id="weekday"&gt;&lt;/p&gt;\n//\n//\n// &lt;script&gt;\n// var d = new Date();\n// var day = d.getDay();\n// var year = d.getYear();\n// var extraDay = (year-118);\n// var newDay = (day+extraDay);\n//\n// var weekday = "";\n// if (newDay%7 === 1){weekday = "Monday"}\n// \telse if(day%7 === 2){weekday = "Tuesday"}\n//     else if (day%7 === 3){weekday = "Wednesday"}\n// \telse if(day%7 === 4){weekday = "Thursday"}\n// \telse if(day%7 === 5){weekday = "Friday"}\n// \telse if(day%7 === 6){weekday = "Saturday"}\n// \telse if(day%7 === 0){weekday = "Sunday"}\n//\n// document.getElementById("demo").innerHTML = d;\n// document.getElementById("day").innerHTML = day;\n// document.getElementById("year").innerHTML = year;\n// document.getElementById("extraDay").innerHTML = extraDay;\n// document.getElementById("newDay").innerHTML = newDay;\n//\n// document.getElementById("weekday").innerHTML = weekday;\n//\n// &lt;\/script&gt;\n//\n// &lt;/body&gt;\n// &lt;/html&gt;\n////# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvd2Vla2RheWNhbGN1bGF0b3IuanM/Y2JjNiJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7OztRQUFnQjtRQU1BO0FBTlQsaUJBQWlCLE9BQU8sS0FBSyxNQUNsQztPQUFLLFFBQ0w7T0FBSyxNQUNMO09BQUssT0FFTjtBQUNEO0FBQU8sa0JBQWtCLE1BQ3ZCO0FBQ0E7TUFBSSxPQUFPLEtBQUssR0FDZDtRQUFJLE9BQU8sT0FBTyxHQUNoQjtVQUFJLE9BQU8sT0FBTyxHQUNoQjtlQUNEO0FBRkQsYUFJRTtlQUNEO0FBQ0Y7QUFQRCxXQVNFO2FBQ0Q7QUFDRjtBQVpELFNBY0U7V0FDRDtBQUNGOzs7QUFFRCxRQUFRLFVBQVUsVUFBVSxVQUFTLFFBQVEsVUFDM0M7TUFBSSxVQUNKO01BQUksVUFFSjs7TUFBRyxhQUFhLEtBQUssYUFBYSxHQUNoQztjQUNEO0FBRkQsYUFHUyxhQUFhLEtBQUssYUFBYSxLQUFLLGFBQWEsSUFDeEQ7Y0FBVSxTQUNYO0FBRkksYUFHTSxhQUFhLEtBQUssYUFBYSxHQUN0QztjQUFVLFNBQ1g7QUFGSSxhQUdJLGFBQWEsS0FBSyxhQUFhLElBQ3JDO2NBQVUsU0FDWjtBQUZJLGFBR0ksYUFBYSxHQUNuQjtjQUFVLFNBQ1o7QUFGSSxhQUdJLGFBQWEsR0FDbkI7Y0FBVSxTQUNaO0FBRkksU0FHQSxJQUFJLGFBQWEsR0FDbkI7Y0FBVSxTQUNaO0FBR0Q7O01BQUcsVUFBUSxNQUFNLEdBQ2Y7Y0FDRDtBQUZELGFBR1EsVUFBUSxNQUFNLEdBQ3BCO2NBQ0Q7QUFGSSxhQUdJLFVBQVEsTUFBTSxHQUNyQjtjQUNEO0FBRkksYUFHRyxVQUFRLE1BQU0sR0FDcEI7Y0FDRDtBQUZJLGFBR0csVUFBUSxNQUFNLEdBQ3BCO2NBQ0Q7QUFGSSxhQUdHLFVBQVEsTUFBTSxHQUNwQjtjQUNEO0FBRkksU0FHQSxJQUFHLFVBQVEsTUFBTSxHQUNwQjtjQUNEO0FBQ0Q7U0FDRDtBQWpESDs7QUFxREU7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBIiwiZmlsZSI6IjExLmpzIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGZ1bmN0aW9uIFdlZWtkYXkobW9udGgsIGRheSwgeWVhcil7XG4gIHRoaXMubW9udGggPSBtb250aDtcbiAgdGhpcy5kYXkgPSBkYXk7XG4gIHRoaXMueWVhciA9IHllYXI7XG5cbn1cbmV4cG9ydCBmdW5jdGlvbiBsZWFwWWVhcih5ZWFyKSB7XG4gIC8veWVhciBpcyBhIG51bWJlclxuICBpZiAoeWVhciAlIDQgPT0gMCkge1xuICAgIGlmICh5ZWFyICUgMTAwID09IDApIHtcbiAgICAgIGlmICh5ZWFyICUgNDAwID09IDApIHtcbiAgICAgICAgcmV0dXJuIHRydWU7XG4gICAgICB9XG4gICAgICBlbHNlIHtcbiAgICAgICAgcmV0dXJuIGZhbHNlO1xuICAgICAgfVxuICAgIH1cbiAgICBlbHNlIHtcbiAgICAgIHJldHVybiB0cnVlO1xuICAgIH1cbiAgfVxuICBlbHNlIHtcbiAgICByZXR1cm4gZmFsc2U7XG4gIH1cbn07XG5cbldlZWtkYXkucHJvdG90eXBlLmZpbmREYXkgPSBmdW5jdGlvbihuZXdEYXksIG5ld01vbnRoKSB7XG4gIHZhciB3ZWVrRGF5ID0gbmV3RGF5O1xuICB2YXIgd2Vla2RheSA9IFwiXCI7XG5cbiAgaWYobmV3TW9udGggPT09IDAgfHwgbmV3TW9udGggPT09IDkpIHtcbiAgICB3ZWVrRGF5ID0gbmV3RGF5O1xuICB9XG4gIGVsc2UgaWYgKG5ld01vbnRoID09PSAxIHx8IG5ld01vbnRoID09PSAyIHx8IG5ld01vbnRoID09PSAxMCl7XG4gICAgd2Vla0RheSA9IG5ld0RheSArIDM7XG4gIH1cbiAgICBlbHNlIGlmIChuZXdNb250aCA9PT0gMyB8fCBuZXdNb250aCA9PT0gNil7XG4gICAgICB3ZWVrRGF5ID0gbmV3RGF5IC0xO1xuICAgIH1cbiAgICBlbHNlIGlmIChuZXdNb250aCA9PT0gOCB8fCBuZXdNb250aCA9PT0gMTEpe1xuICAgICAgIHdlZWtEYXkgPSBuZXdEYXkgKyA1O1xuICAgIH1cbiAgICBlbHNlIGlmIChuZXdNb250aCA9PT0gNSkge1xuICAgICAgIHdlZWtEYXkgPSBuZXdEYXkgKyA0O1xuICAgIH1cbiAgICBlbHNlIGlmIChuZXdNb250aCA9PT0gNCkge1xuICAgICAgIHdlZWtEYXkgPSBuZXdEYXkgKzE7XG4gICAgfVxuICAgIGVsc2UgaWYgKG5ld01vbnRoID09PSA3KSB7XG4gICAgICAgd2Vla0RheSA9IG5ld0RheSArIDI7XG4gICAgfVxuXG5cbiAgICBpZih3ZWVrRGF5JTcgPT09IDEpe1xuICAgICAgd2Vla2RheSA9IFwiTW9uZGF5XCI7XG4gICAgfVxuICAgIGVsc2UgaWYod2Vla0RheSU3ID09PSAyKXtcbiAgICAgIHdlZWtkYXkgPSBcIlR1ZXNkYXlcIjtcbiAgICB9XG4gICAgZWxzZSBpZiAod2Vla0RheSU3ID09PSAzKXtcbiAgICAgIHdlZWtkYXkgPSBcIldlZG5lc2RheVwiO1xuICAgIH1cbiAgICBlbHNlIGlmKHdlZWtEYXklNyA9PT0gNCl7XG4gICAgICB3ZWVrZGF5ID0gXCJUaHVyc2RheVwiO1xuICAgIH1cbiAgICBlbHNlIGlmKHdlZWtEYXklNyA9PT0gNSl7XG4gICAgICB3ZWVrZGF5ID0gXCJGcmlkYXlcIjtcbiAgICB9XG4gICAgZWxzZSBpZih3ZWVrRGF5JTcgPT09IDYpe1xuICAgICAgd2Vla2RheSA9IFwiU2F0dXJkYXlcIjtcbiAgICB9XG4gICAgZWxzZSBpZih3ZWVrRGF5JTcgPT09IDApe1xuICAgICAgd2Vla2RheSA9IFwiU3VuZGF5XCI7XG4gICAgfVxuICAgIHJldHVybiB3ZWVrZGF5O1xuICB9O1xuXG5cblxuICAvL1xuICAvLyA8IURPQ1RZUEUgaHRtbD5cbiAgLy8gPGh0bWw+XG4gIC8vIDxib2R5PlxuICAvL1xuICAvLyA8aDI+SmF2YVNjcmlwdCBuZXcgRGF0ZSgpPC9oMj5cbiAgLy9cbiAgLy8gPHAgaWQ9XCJkZW1vXCI+PC9wPlxuICAvLyA8cCBpZD1cImRheVwiPjwvcD5cbiAgLy8gPHAgaWQ9XCJ5ZWFyXCI+PC9wPlxuICAvLyA8cCBpZD1cImV4dHJhRGF5XCI+PC9wPlxuICAvLyA8cCBpZD1cIm5ld0RheVwiPjwvcD5cbiAgLy9cbiAgLy8gPHAgaWQ9XCJ3ZWVrZGF5XCI+PC9wPlxuICAvL1xuICAvL1xuICAvLyA8c2NyaXB0PlxuICAvLyB2YXIgZCA9IG5ldyBEYXRlKCk7XG4gIC8vIHZhciBkYXkgPSBkLmdldERheSgpO1xuICAvLyB2YXIgeWVhciA9IGQuZ2V0WWVhcigpO1xuICAvLyB2YXIgZXh0cmFEYXkgPSAoeWVhci0xMTgpO1xuICAvLyB2YXIgbmV3RGF5ID0gKGRheStleHRyYURheSk7XG4gIC8vXG4gIC8vIHZhciB3ZWVrZGF5ID0gXCJcIjtcbiAgLy8gaWYgKG5ld0RheSU3ID09PSAxKXt3ZWVrZGF5ID0gXCJNb25kYXlcIn1cbiAgLy8gXHRlbHNlIGlmKGRheSU3ID09PSAyKXt3ZWVrZGF5ID0gXCJUdWVzZGF5XCJ9XG4gIC8vICAgICBlbHNlIGlmIChkYXklNyA9PT0gMyl7d2Vla2RheSA9IFwiV2VkbmVzZGF5XCJ9XG4gIC8vIFx0ZWxzZSBpZihkYXklNyA9PT0gNCl7d2Vla2RheSA9IFwiVGh1cnNkYXlcIn1cbiAgLy8gXHRlbHNlIGlmKGRheSU3ID09PSA1KXt3ZWVrZGF5ID0gXCJGcmlkYXlcIn1cbiAgLy8gXHRlbHNlIGlmKGRheSU3ID09PSA2KXt3ZWVrZGF5ID0gXCJTYXR1cmRheVwifVxuICAvLyBcdGVsc2UgaWYoZGF5JTcgPT09IDApe3dlZWtkYXkgPSBcIlN1bmRheVwifVxuICAvL1xuICAvLyBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImRlbW9cIikuaW5uZXJIVE1MID0gZDtcbiAgLy8gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJkYXlcIikuaW5uZXJIVE1MID0gZGF5O1xuICAvLyBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcInllYXJcIikuaW5uZXJIVE1MID0geWVhcjtcbiAgLy8gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJleHRyYURheVwiKS5pbm5lckhUTUwgPSBleHRyYURheTtcbiAgLy8gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJuZXdEYXlcIikuaW5uZXJIVE1MID0gbmV3RGF5O1xuICAvL1xuICAvLyBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcIndlZWtkYXlcIikuaW5uZXJIVE1MID0gd2Vla2RheTtcbiAgLy9cbiAgLy8gPC9zY3JpcHQ+XG4gIC8vXG4gIC8vIDwvYm9keT5cbiAgLy8gPC9odG1sPlxuICAvL1xuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///11\n')}});</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Oct 10 2018 14:07:54 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
